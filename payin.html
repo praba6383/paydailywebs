@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayIn API - PayDaily Payment Gateway</title>
+    <link rel="stylesheet" href="styles.css">
+      <link rel="icon" type="image/png" href="images/PD1.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><img src="images/PD2.png" width="110"></h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="#" class="nav-link btn-primary">Get Started</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>PayIn API</h1>
+            <p>Accept payments from customers worldwide with our secure and reliable PayIn API</p>
+        </div>
+    </section>
+
+    <!-- PayIn Content -->
+    <section class="content-section">
+        <div class="container">
+            <!-- Overview -->
+            <div class="api-section">
+                <h2>Accept Payments Globally</h2>
+                <p>Our PayIn API enables businesses to accept payments from customers worldwide through multiple payment methods. Built with security, reliability, and developer experience in mind, our API processes millions of transactions daily with industry-leading success rates.</p>
+                
+                <p>Whether you're a startup processing your first payment or an enterprise handling millions in transactions, our PayIn API scales with your business needs while maintaining the highest standards of security and compliance.</p>
+            </div>
+
+            <!-- Key Features -->
+            <div class="api-section">
+                <h2>Key Features</h2>
+                <div class="feature-list">
+                    <div class="feature-list-item">
+                        <h4><i class="fas fa-credit-card" style="color: #2563eb; margin-right: 0.5rem;"></i>Multiple Payment Methods</h4>
+                        <p>Accept credit cards, debit cards, digital wallets (Apple Pay, Google Pay), bank transfers, and local payment methods across 150+ countries.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4><i class="fas fa-shield-alt" style="color: #dc2626; margin-right: 0.5rem;"></i>Advanced Security</h4>
+                        <p>PCI DSS Level 1 compliant with 3D Secure authentication, tokenization, and AI-powered fraud detection to protect every transaction.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4><i class="fas fa-bolt" style="color: #f59e0b; margin-right: 0.5rem;"></i>Real-time Processing</h4>
+                        <p>Instant payment processing with real-time status updates, webhooks, and immediate settlement notifications.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4><i class="fas fa-globe" style="color: #10b981; margin-right: 0.5rem;"></i>Global Coverage</h4>
+                        <p>Process payments in 150+ currencies with automatic currency conversion and local payment method support.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4><i class="fas fa-mobile-alt" style="color: #8b5cf6; margin-right: 0.5rem;"></i>Mobile Optimized</h4>
+                        <p>Responsive payment forms optimized for mobile devices with one-click payments and biometric authentication.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4><i class="fas fa-chart-bar" style="color: #ef4444; margin-right: 0.5rem;"></i>Advanced Analytics</h4>
+                        <p>Comprehensive reporting dashboard with transaction analytics, success rates, and business intelligence insights.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Supported Payment Methods -->
+            <div class="api-section">
+                <h2>Supported Payment Methods</h2>
+                <div class="feature-list">
+                    <div class="feature-list-item">
+                        <h4>Credit & Debit Cards</h4>
+                        <p>Visa, Mastercard, American Express, Discover, JCB, Diners Club, and 50+ local card networks worldwide.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Digital Wallets</h4>
+                        <p>Apple Pay, Google Pay, Samsung Pay, PayPal, Amazon Pay, and regional wallet solutions.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Bank Transfers</h4>
+                        <p>ACH, SEPA, wire transfers, and local bank transfer methods in major markets.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Buy Now, Pay Later</h4>
+                        <p>Klarna, Afterpay, Affirm, and other BNPL solutions for flexible payment options.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Cryptocurrency</h4>
+                        <p>Bitcoin, Ethereum, and major cryptocurrencies with automatic conversion to fiat currency.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Local Methods</h4>
+                        <p>Alipay, WeChat Pay, iDEAL, Sofort, Boleto, and 100+ local payment methods.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- API Integration -->
+            <div class="api-section">
+                <h2>Easy Integration</h2>
+                <p>Get started with our PayIn API in minutes with comprehensive documentation and developer-friendly tools.</p>
+                
+                <h3>Quick Start Example</h3>
+                <div class="code-block">
+curl -X POST https://api.paydaily.com/v1/payments \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "amount": 2000,
+    "currency": "USD",
+    "payment_method": {
+      "type": "card",
+      "card": {
+        "number": "4242424242424242",
+        "exp_month": 12,
+        "exp_year": 2025,
+        "cvc": "123"
+      }
+    },
+    "description": "Payment for Order #12345",
+    "customer": {
+      "email": "customer@example.com",
+      "name": "John Doe"
+    },
+    "metadata": {
+      "order_id": "12345",
+      "customer_id": "cust_123"
+    }
+  }'
+                </div>
+
+                <h3>Response</h3>
+                <div class="code-block">
+{
+  "id": "pay_1234567890",
+  "status": "succeeded",
+  "amount": 2000,
+  "currency": "USD",
+  "payment_method": {
+    "type": "card",
+    "card": {
+      "brand": "visa",
+      "last4": "4242",
+      "exp_month": 12,
+      "exp_year": 2025
+    }
+  },
+  "created": 1640995200,
+  "description": "Payment for Order #12345",
+  "receipt_url": "https://pay.paydaily.com/receipts/pay_1234567890"
+}
+                </div>
+            </div>
+
+            <!-- Security Features -->
+            <div class="api-section">
+                <h2>Security & Compliance</h2>
+                <div class="feature-list">
+                    <div class="feature-list-item">
+                        <h4>PCI DSS Level 1</h4>
+                        <p>Highest level of payment card industry compliance with regular audits and certifications.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>3D Secure 2.0</h4>
+                        <p>Enhanced authentication for card payments with improved user experience and fraud protection.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Tokenization</h4>
+                        <p>Secure token-based payments that protect sensitive card data and enable recurring transactions.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Fraud Detection</h4>
+                        <p>Machine learning algorithms analyze transaction patterns to prevent fraudulent activities in real-time.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Data Encryption</h4>
+                        <p>End-to-end encryption with AES-256 and TLS 1.3 for all data transmission and storage.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Regulatory Compliance</h4>
+                        <p>GDPR, PSD2, and local regulatory compliance across all supported markets.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing -->
+            <div class="api-section">
+                <h2>Transparent Pricing</h2>
+                <div class="feature-list">
+                    <div class="feature-list-item">
+                        <h4>Domestic Cards</h4>
+                        <p>2.9% + $0.30 per successful transaction for domestic card payments</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>International Cards</h4>
+                        <p>3.4% + $0.30 per successful transaction for international card payments</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Digital Wallets</h4>
+                        <p>2.9% + $0.30 per successful transaction for Apple Pay, Google Pay, etc.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Bank Transfers</h4>
+                        <p>0.8% per successful transaction with $5 maximum fee</p>
+                    </div>
+                </div>
+                <p><strong>No setup fees, no monthly fees, no hidden charges. You only pay for successful transactions.</strong></p>
+            </div>
+
+            <!-- Use Cases -->
+            <div class="api-section">
+                <h2>Perfect For</h2>
+                <div class="feature-list">
+                    <div class="feature-list-item">
+                        <h4>E-commerce Stores</h4>
+                        <p>Online retailers, marketplaces, and subscription businesses looking for reliable payment processing.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Mobile Apps</h4>
+                        <p>iOS and Android applications requiring in-app purchases and subscription management.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>SaaS Platforms</h4>
+                        <p>Software companies needing recurring billing, usage-based pricing, and subscription management.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Marketplaces</h4>
+                        <p>Multi-vendor platforms requiring split payments, escrow services, and seller payouts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Start Accepting Payments Today</h2>
+                <p>Join thousands of businesses that trust PayDaily for their payment processing needs.</p>
+                <a href="contact.html" class="btn btn-primary">Get API Keys</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PayDaily</h3>
+                    <p>Your trusted payment gateway partner for secure, fast, and reliable payment processing worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="payin.html">PayIn API</a></li>
+                        <li><a href="payout.html">PayOut API</a></li>
+                        <li><a href="qr-codes.html">Static QR</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Status Page</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PayDaily. All rights reserved. |<a href="privacy.html"> Privacy Policy </a>|<a href="T&S.html"> Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

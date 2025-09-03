@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayOut API - PayDaily Payment Gateway</title>
+    <link rel="stylesheet" href="styles.css">
+      <link rel="icon" type="image/png" href="images/PD1.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><img src="images/PD2.png" width="110"></h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="#" class="nav-link btn-primary">Get Started</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>PayOut API</h1>
+            <p>Send money to vendors, affiliates, and customers instantly with our reliable PayOut API</p>
+        </div>
+    </section>
+
+    <!-- PayOut Content -->
+    <section class="content-section">
+        <div class="container">
+            <!-- Overview -->
+            <div class="api-section">
+                <h2>Instant Money Transfers</h2>
+                <p>Our PayOut API enables businesses to send money to recipients worldwide quickly and securely. Whether you need to pay vendors, distribute affiliate commissions, process refunds, or send customer rewards, our API handles it all with enterprise-grade reliability.</p>
+                
+                <p>Built for scale and compliance, our PayOut API processes millions of disbursements daily while maintaining the highest standards of security and regulatory compliance across all supported markets.</p>
+            </div>
+
+            <!-- Key Features -->
+            <div class="api-section">
+                <h2>Key Features</h2>
+                <div class="feature-list">
+                    <div class="feature-list-item">
+                        <h4><i class="fas fa-rocket" style="color: #2563eb; margin-right: 0.5rem;"></i>Instant Transfers</h4>
+                        <p>Send money instantly to bank accounts, cards, and digital wallets with real-time processing and immediate notifications.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4><i class="fas fa-users" style="color: #dc2626; margin-right: 0.5rem;"></i>Bulk Payouts</h4>
+                        <p>Process thousands of payouts simultaneously with our bulk API, perfect for marketplace settlements and mass disbursements.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4><i class="fas fa-globe-americas" style="color: #10b981; margin-right: 0.5rem;"></i>Global Reach</h4>
+                        <p>Send money to 150+ countries with support for local banking systems and preferred payout methods.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4><i class="fas fa-shield-alt" style="color: #f59e0b; margin-right: 0.5rem;"></i>Compliance Ready</h4>
+                        <p>Built-in AML/KYC checks, sanctions screening, and regulatory compliance for all supported jurisdictions.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4><i class="fas fa-chart-line" style="color: #8b5cf6; margin-right: 0.5rem;"></i>Real-time Tracking</h4>
+                        <p>Track payout status in real-time with detailed transaction history and comprehensive reporting.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4><i class="fas fa-cog" style="color: #ef4444; margin-right: 0.5rem;"></i>Automated Workflows</h4>
+                        <p>Set up automated payout schedules, approval workflows, and conditional disbursements based on your business rules.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payout Methods -->
+            <div class="api-section">
+                <h2>Supported Payout Methods</h2>
+                <div class="feature-list">
+                    <div class="feature-list-item">
+                        <h4>Bank Transfers</h4>
+                        <p>ACH, wire transfers, SEPA, and local bank transfer methods with same-day or next-day settlement.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Debit Cards</h4>
+                        <p>Instant payouts to Visa and Mastercard debit cards with funds available within minutes.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Digital Wallets</h4>
+                        <p>PayPal, Venmo, Cash App, and regional wallet solutions for instant money transfers.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Prepaid Cards</h4>
+                        <p>Load funds onto prepaid cards and virtual cards for employee expenses and customer rewards.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Cryptocurrency</h4>
+                        <p>Send payouts in Bitcoin, Ethereum, and other cryptocurrencies with automatic conversion rates.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Cash Pickup</h4>
+                        <p>Cash pickup locations in emerging markets through partnerships with Western Union and MoneyGram.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- API Integration -->
+            <div class="api-section">
+                <h2>Simple Integration</h2>
+                <p>Start sending payouts in minutes with our developer-friendly API and comprehensive documentation.</p>
+                
+                <h3>Single Payout Example</h3>
+                <div class="code-block">
+curl -X POST https://api.paydaily.com/v1/payouts \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "amount": 1000,
+    "currency": "USD",
+    "recipient": {
+      "type": "bank_account",
+      "bank_account": {
+        "account_number": "1234567890",
+        "routing_number": "021000021",
+        "account_holder_name": "John Doe"
+      }
+    },
+    "description": "Affiliate commission payment",
+    "metadata": {
+      "affiliate_id": "aff_123",
+      "commission_period": "2024-01"
+    }
+  }'
+                </div>
+
+                <h3>Bulk Payout Example</h3>
+                <div class="code-block">
+curl -X POST https://api.paydaily.com/v1/payouts/batch \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "payouts": [
+      {
+        "amount": 500,
+        "currency": "USD",
+        "recipient": {
+          "type": "debit_card",
+          "debit_card": {
+            "number": "4000000000000002"
+          }
+        },
+        "description": "Vendor payment #1"
+      },
+      {
+        "amount": 750,
+        "currency": "USD",
+        "recipient": {
+          "type": "bank_account",
+          "bank_account": {
+            "account_number": "9876543210",
+            "routing_number": "021000021"
+          }
+        },
+        "description": "Vendor payment #2"
+      }
+    ]
+  }'
+                </div>
+            </div>
+
+            <!-- Use Cases -->
+            <div class="api-section">
+                <h2>Common Use Cases</h2>
+                <div class="feature-list">
+                    <div class="feature-list-item">
+                        <h4>Marketplace Settlements</h4>
+                        <p>Automatically pay sellers and vendors their share of marketplace transactions with configurable settlement schedules.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Affiliate Commissions</h4>
+                        <p>Distribute affiliate and referral commissions based on performance metrics and payout schedules.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Gig Economy Payments</h4>
+                        <p>Pay freelancers, contractors, and gig workers instantly upon job completion or on scheduled intervals.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Customer Refunds</h4>
+                        <p>Process refunds quickly and efficiently to original payment methods or alternative payout options.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Insurance Claims</h4>
+                        <p>Disburse insurance payouts and claims settlements with proper documentation and compliance tracking.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Loyalty Rewards</h4>
+                        <p>Send cash rewards, cashback, and loyalty program payouts to customers automatically.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security & Compliance -->
+            <div class="api-section">
+                <h2>Security & Compliance</h2>
+                <div class="feature-list">
+                    <div class="feature-list-item">
+                        <h4>AML/KYC Compliance</h4>
+                        <p>Automated anti-money laundering checks and know-your-customer verification for all recipients.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Sanctions Screening</h4>
+                        <p>Real-time screening against OFAC, EU, and other international sanctions lists before processing payouts.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Multi-level Approvals</h4>
+                        <p>Configurable approval workflows with role-based access controls and audit trails for all transactions.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Fraud Prevention</h4>
+                        <p>Advanced fraud detection algorithms monitor payout patterns and flag suspicious activities.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Data Protection</h4>
+                        <p>End-to-end encryption, secure data storage, and GDPR compliance for all recipient information.</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Regulatory Reporting</h4>
+                        <p>Automated regulatory reporting and documentation for tax authorities and financial regulators.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing -->
+            <div class="api-section">
+                <h2>Competitive Pricing</h2>
+                <div class="feature-list">
+                    <div class="feature-list-item">
+                        <h4>Domestic Bank Transfers</h4>
+                        <p>$0.25 per transfer for ACH and domestic wire transfers</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>International Transfers</h4>
+                        <p>1.2% + $2.00 per transfer for international wire transfers</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Instant Card Payouts</h4>
+                        <p>1.5% per transfer for instant debit card payouts</p>
+                    </div>
+                    <div class="feature-list-item">
+                        <h4>Digital Wallet Transfers</h4>
+                        <p>2.0% per transfer for PayPal, Venmo, and other wallet services</p>
+                    </div>
+                </div>
+                <p><strong>Volume discounts available for high-volume merchants. Contact sales for custom pricing.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Start Sending Payouts Today</h2>
+                <p>Streamline your disbursement process with our reliable PayOut API.</p>
+                <a href="contact.html" class="btn btn-primary">Get API Access</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PayDaily</h3>
+                    <p>Your trusted payment gateway partner for secure, fast, and reliable payment processing worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="payin.html">PayIn API</a></li>
+                        <li><a href="payout.html">PayOut API</a></li>
+                        <li><a href="qr-codes.html">Static QR</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Status Page</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PayDaily. All rights reserved. | <a href="privacy.html"> Privacy Policy </a>|<a href="T&S.html"> Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
